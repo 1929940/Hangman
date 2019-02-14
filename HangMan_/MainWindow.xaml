@@ -5,59 +5,57 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HangMan_"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="307" FontFamily="MV Boli" FontSize="30" Background="Blue">
+        Title="MainWindow" Height="500" Width="250" FontFamily="Calibri" FontSize="30" Background="Silver">
     <Grid Margin="5">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="1.3*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="277"/>
-        </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="225"/>
+    </Grid.ColumnDefinitions>
 
-        <Menu>
-            <MenuItem Header="Game" Grid.Row="0" Grid.Column="0">
-                <MenuItem Header="Reset" Click="MenuItem_Click_Reset"/>
-                <MenuItem Header="Quit" Click="MenuItem_Click_Quit"/>
-            </MenuItem>
-            <MenuItem Header="Settings">
-                <MenuItem Header="WordPool Manager" Click="MenuItem_Click_WordPoolManager"/>
-            </MenuItem>
-        </Menu>
-        
-        <Label Content="HANGMAN" FontSize="40" HorizontalAlignment="Center" FontWeight="Bold"
-               Grid.Row="1"/>
+    <Menu>
+      <MenuItem Header="Game" Grid.Row="0" Grid.Column="0">
+        <MenuItem Header="Reset" Click="MenuItem_Click_Reset"/>
+        <MenuItem Header="Quit" Click="MenuItem_Click_Quit"/>
+      </MenuItem>
+      <MenuItem Header="Settings">
+        <MenuItem Header="WordPool Manager" Click="MenuItem_Click_WordPoolManager"/>
+      </MenuItem>
+    </Menu>
 
-        <Label Content="Guess the word" HorizontalAlignment="Left" Margin="15,0"
-               Grid.Row="2"/>
-        
-        <StackPanel Grid.Row="3" Grid.Column="0" Orientation="Horizontal" Margin="15,0" HorizontalAlignment="Left">
-            <Label Content="attempts left:" HorizontalAlignment="Left"
-                   FontFamily="MV Boli"/>
-            <Label Name="counterLabel" Content="0"
-                   HorizontalAlignment="Left"
-                   FontFamily="MV Boli"/>
-        </StackPanel>
-        
-        <Label Name="guessLabel"
-               HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center"
-               Grid.Row="4" Background="Gray"  Width="250" Margin="15,0"/>
+    <Label Content="HANGMAN" FontSize="40" HorizontalAlignment="Left" FontWeight="Bold"
+           Grid.Row="1" Margin="13,0"/>
 
-        <Label Content="enter your guess" HorizontalAlignment="Left"
-               Grid.Row="5" Grid.Column="0" Margin="15,0"/>
+    <Label Content="Guess the word" HorizontalAlignment="Left" Margin="10,0"
+           Grid.Row="2"/>
 
-        <TextBox Margin="15,5" Name="textBox"
-                 Grid.Row="6" KeyDown="OnEnterEvent"/>
+    <StackPanel Grid.Row="3" Grid.Column="0" Orientation="Horizontal" Margin="10,0" HorizontalAlignment="Left">
+      <Label Content="attempts left:" HorizontalAlignment="Left"/>
+      <Label Name="counterLabel" Content="0"
+             HorizontalAlignment="Left"/>
+    </StackPanel>
 
-        <Button Content="Guess" Margin="15,5" Name="ClickBTN"
-                Grid.Row="7" Click="ClickBTN_Click"/>
+    <Label Name="guessLabel"
+           HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center"
+           Grid.Row="4" Background="Gainsboro"  Width="250" Margin="10,0"/>
+
+    <Label Content="enter your guess" HorizontalAlignment="Left"
+           Grid.Row="5" Grid.Column="0" Margin="10,0"/>
+
+    <TextBox Margin="10,5" Name="textBox"
+             Grid.Row="6" KeyDown="OnEnterEvent"/>
+
+    <Button Content="Guess" Margin="10,5" Name="ClickBTN"
+            Grid.Row="7" Click="ClickBTN_Click"/>
 
 
-    </Grid>
+  </Grid>
 </Window>

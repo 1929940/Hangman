@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HangMan_"
         mc:Ignorable="d"
-        Title="WordPoolManager" Height="450" Width="280" FontSize="23" FontFamily="MV Boli">
+        Title="WordPoolManager" Height="450" Width="280" FontSize="23" FontFamily="Calibri" Background="Silver">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>

@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -24,46 +26,60 @@ namespace HangMan_
     /// </summary>
     /// 
 
-        // What to add?
-        // restart nie jest pod enter
 
 
     public partial class MainWindow : Window
     {
         int counter = 5;
         string generatedWord;
-        HashSet<char> guessedLetters = new HashSet<char>() // Allows Duplicates.
+        HashSet<char> guessedLetters = new HashSet<char>()
         {
             'a', 'e', 'i', 'o', 'u' , 'y'
         };
         bool btnFlag = true;
-        List<String> wordPool = new List<string>()
-         {
-            "Grzeszczyk",
-            "Agata",
-            "Kufel",
-            "Listewnik",
-            "Czarnecki",
-            "Mostowski",
-            "Dudkowska",
-            "Topolski",
-            "Berger",
-            "Denisiuk",
-            "Morawska",
-            "Piotrowski",
-            "Kuciapa"
-        };
+
+        ObservableCollection<String> wordPool;
+
+        //List<String> wordPool = new List<string>()
+        // {
+        //    "Grzeszczyk",
+        //    "Agata",
+        //    "Kufel",
+        //    "Listewnik",
+        //    "Czarnecki",
+        //    "Mostowski",
+        //    "Dudkowska",
+        //    "Topolski",
+        //    "Berger",
+        //    "Denisiuk",
+        //    "Morawska",
+        //    "Piotrowski",
+        //    "Kuciapa"
+        //};
 
 
         public MainWindow()
         {
             InitializeComponent();
+            wordPool = ReadFile();
             generatedWord = GenerateWord();
 
             counterLabel.Content = counter;
-            guessLabel.Content = GenerateDisplay();
+            guessLabel.Content = GenerateDisplay();            
 
         }
+        public ObservableCollection<String> ReadFile()
+        {
+            string line;
+            ObservableCollection<String> tmp = new ObservableCollection<string>();
+            StreamReader read = new StreamReader(@"..\..\Resources\wordPoolData.txt");
+            while ((line = read.ReadLine()) != null)
+            {
+                tmp.Add(line);
+            }
+            return tmp;
+        }
+
         internal String GenerateDisplay()
         {
             string displayedWord = "";

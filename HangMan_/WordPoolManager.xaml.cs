@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,8 +21,8 @@ namespace HangMan_
     /// </summary>
     public partial class WordPoolManager : Window
     {
-        List<String> PassableList;
-        public WordPoolManager(List<String> list)
+        ObservableCollection<String> PassableList;
+        public WordPoolManager(ObservableCollection<String> list)
         {
             InitializeComponent();
             Listbox.ItemsSource = list;
@@ -29,17 +31,30 @@ namespace HangMan_
 
         private void AddBtn_Click(object sender, RoutedEventArgs e)
         {
-            PassableList.Add(txtBox.Text.ToLower().Title());
-            Listbox.Items.Refresh();
+            string tmp = txtBox.Text.ToLower().Title();
+            PassableList.Add(tmp);
             txtBox.Text = String.Empty;
             Listbox.ScrollIntoView(PassableList[PassableList.Count() - 1]);
+
+            using (StreamWriter write = new StreamWriter(@"..\..\Resources\wordPoolData.txt", true))
+            {
+            write.WriteLine(tmp);
+            }
         }
 
         private void RemoveBtn_Click(object sender, RoutedEventArgs e)
         {
             PassableList.Remove((string)Listbox.SelectedItem);
-            Listbox.Items.Refresh();
             Listbox.SelectedIndex = 0;
+            using (StreamWriter write = new StreamWriter(@"..\..\Resources\wordPoolData.txt"))
+            {
+                foreach (var item in PassableList)
+                {
+                    write.WriteLine(item);
+                }
+            }
+
+
         }
 
         private void TxtBox_KeyDown(object sender, KeyEventArgs e)
