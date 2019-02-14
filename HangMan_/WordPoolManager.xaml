@@ -1,0 +1,25 @@
+﻿<Window x:Class="HangMan_.WordPoolManager"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HangMan_"
+        mc:Ignorable="d"
+        Title="WordPoolManager" Height="450" Width="280" FontSize="23" FontFamily="MV Boli">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <Label Content="Wordpool Manager" Grid.Row="0" />
+        <ListBox Grid.Row="1" Name="Listbox"/>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <Button Content="Add" Margin="5" FontSize="20" Name="addBtn" Click="AddBtn_Click"/>
+            <TextBox Margin="5" Width="120" FontSize="20" Name="txtBox" KeyDown="TxtBox_KeyDown"/>
+            <Button Content="Remove" Margin="5" FontSize="20" Name="removeBtn" Click="RemoveBtn_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
