@@ -37,26 +37,18 @@ namespace HangMan_
             'a', 'e', 'i', 'o', 'u' , 'y'
         };
         bool btnFlag = true;
+        List<BitmapImage> HangManBitmapList = new List<BitmapImage>(6)
+        {
+            new BitmapImage(new Uri(@"C:\Users\Użytkownik\source\repos\HangMan\HangMan_\Resources\Hang\Hang0.jpg")),
+            new BitmapImage(new Uri(@"C:\Users\Użytkownik\source\repos\HangMan\HangMan_\Resources\Hang\Hang1.jpg")),
+            new BitmapImage(new Uri(@"C:\Users\Użytkownik\source\repos\HangMan\HangMan_\Resources\Hang\Hang2.jpg")),
+            new BitmapImage(new Uri(@"C:\Users\Użytkownik\source\repos\HangMan\HangMan_\Resources\Hang\Hang3.jpg")),
+            new BitmapImage(new Uri(@"C:\Users\Użytkownik\source\repos\HangMan\HangMan_\Resources\Hang\Hang4.jpg")),
+            new BitmapImage(new Uri(@"C:\Users\Użytkownik\source\repos\HangMan\HangMan_\Resources\Hang\Hang5.jpg"))
+        };
+
 
         ObservableCollection<String> wordPool;
-
-        //List<String> wordPool = new List<string>()
-        // {
-        //    "Grzeszczyk",
-        //    "Agata",
-        //    "Kufel",
-        //    "Listewnik",
-        //    "Czarnecki",
-        //    "Mostowski",
-        //    "Dudkowska",
-        //    "Topolski",
-        //    "Berger",
-        //    "Denisiuk",
-        //    "Morawska",
-        //    "Piotrowski",
-        //    "Kuciapa"
-        //};
-
 
         public MainWindow()
         {
@@ -64,7 +56,7 @@ namespace HangMan_
             wordPool = ReadFile();
             generatedWord = GenerateWord();
 
-            counterLabel.Content = counter;
+            imageHang.Source = HangManBitmapList[counter];
             guessLabel.Content = GenerateDisplay();            
 
         }
@@ -131,7 +123,7 @@ namespace HangMan_
         internal void Reset()
         {
             counter = 5;
-            counterLabel.Content = counter;
+            imageHang.Source = HangManBitmapList[counter];
             generatedWord = GenerateWord();
 
             guessedLetters = new HashSet<char>()
@@ -151,7 +143,7 @@ namespace HangMan_
             bool victoryFlag = true;
             if (btnFlag)
             {
-                counterLabel.Content = --counter; 
+                imageHang.Source = HangManBitmapList[--counter];
                 if (textBox.Text.Length == 1)
                 {
                     guessedLetters.Add(Convert.ToChar(textBox.Text.ToLower()));

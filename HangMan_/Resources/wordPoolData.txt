@@ -1,7 +1,6 @@
 Police
 Water
 Mountain
-Employee
 Glass
 Chicken
 Dinner

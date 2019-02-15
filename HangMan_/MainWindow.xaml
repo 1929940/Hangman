@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HangMan_"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="250" FontFamily="Calibri" FontSize="30" Background="Silver">
+        Title="MainWindow" Height="500" Width="270" FontFamily="Calibri" FontSize="30" Background="Silver">
     <Grid Margin="5">
     <Grid.RowDefinitions>
       <RowDefinition Height="Auto"/>
@@ -18,7 +18,7 @@
       <RowDefinition Height="*"/>
     </Grid.RowDefinitions>
     <Grid.ColumnDefinitions>
-      <ColumnDefinition Width="225"/>
+      <ColumnDefinition Width="241"/>
     </Grid.ColumnDefinitions>
 
     <Menu>
@@ -31,16 +31,15 @@
       </MenuItem>
     </Menu>
 
-    <Label Content="HANGMAN" FontSize="40" HorizontalAlignment="Left" FontWeight="Bold"
+    <Label Content="HANGMAN" FontSize="41" HorizontalAlignment="Left" FontWeight="Bold"
            Grid.Row="1" Margin="13,0"/>
 
     <Label Content="Guess the word" HorizontalAlignment="Left" Margin="10,0"
            Grid.Row="2"/>
 
     <StackPanel Grid.Row="3" Grid.Column="0" Orientation="Horizontal" Margin="10,0" HorizontalAlignment="Left">
-      <Label Content="attempts left:" HorizontalAlignment="Left"/>
-      <Label Name="counterLabel" Content="0"
-             HorizontalAlignment="Left"/>
+            <Label Content="attempts left:" HorizontalAlignment="Left"/>
+            <Image Name="imageHang" HorizontalAlignment="Left"/>
     </StackPanel>
 
     <Label Name="guessLabel"
