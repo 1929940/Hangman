@@ -38,7 +38,7 @@
            Grid.Row="2"/>
 
     <StackPanel Grid.Row="3" Grid.Column="0" Orientation="Horizontal" Margin="10,0" HorizontalAlignment="Left">
-            <Label Content="attempts left:" HorizontalAlignment="Left"/>
+            <Label Content="guesses left:" HorizontalAlignment="Left"/>
             <Image Name="imageHang" HorizontalAlignment="Left"/>
     </StackPanel>
 

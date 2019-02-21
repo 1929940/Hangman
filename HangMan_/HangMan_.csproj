@@ -130,5 +130,13 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Hang0.jpg" />
+    <Resource Include="Images\Hang1.jpg" />
+    <Resource Include="Images\Hang2.jpg" />
+    <Resource Include="Images\Hang3.jpg" />
+    <Resource Include="Images\Hang4.jpg" />
+    <Resource Include="Images\Hang5.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -39,12 +39,12 @@ namespace HangMan_
         bool btnFlag = true;
         List<BitmapImage> HangManBitmapList = new List<BitmapImage>(6)
         {
-            new BitmapImage(new Uri(@"C:\Users\Użytkownik\source\repos\HangMan\HangMan_\Resources\Hang\Hang0.jpg")),
-            new BitmapImage(new Uri(@"C:\Users\Użytkownik\source\repos\HangMan\HangMan_\Resources\Hang\Hang1.jpg")),
-            new BitmapImage(new Uri(@"C:\Users\Użytkownik\source\repos\HangMan\HangMan_\Resources\Hang\Hang2.jpg")),
-            new BitmapImage(new Uri(@"C:\Users\Użytkownik\source\repos\HangMan\HangMan_\Resources\Hang\Hang3.jpg")),
-            new BitmapImage(new Uri(@"C:\Users\Użytkownik\source\repos\HangMan\HangMan_\Resources\Hang\Hang4.jpg")),
-            new BitmapImage(new Uri(@"C:\Users\Użytkownik\source\repos\HangMan\HangMan_\Resources\Hang\Hang5.jpg"))
+            new BitmapImage(new Uri(@"pack://application:,,,/Images/Hang0.jpg")),
+            new BitmapImage(new Uri(@"pack://application:,,,/Images/Hang1.jpg")),
+            new BitmapImage(new Uri(@"pack://application:,,,/Images/Hang2.jpg")),
+            new BitmapImage(new Uri(@"pack://application:,,,/Images/Hang3.jpg")),
+            new BitmapImage(new Uri(@"pack://application:,,,/Images/Hang4.jpg")),
+            new BitmapImage(new Uri(@"pack://application:,,,/Images/Hang5.jpg"))
         };
 
 
